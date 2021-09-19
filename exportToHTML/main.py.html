@@ -1,0 +1,47 @@
+<html>
+<head>
+<title>main.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #d55fde;}
+.s1 { color: #bbbbbb;}
+.s2 { color: #d19a66;}
+.s3 { color: #5c6370;}
+.s4 { color: #89ca78;}
+.s5 { color: #2bbac5;}
+</style>
+</head>
+<body bgcolor="#282c34">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+main.py</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">random</span>
+<span class="s0">import </span><span class="s1">string</span>
+<span class="s0">def </span><span class="s1">passgen ():</span>
+    <span class="s1">a = []</span>
+    <span class="s1">pwlen = </span><span class="s2">16</span>
+    <span class="s1">random.seed(random.randint(</span><span class="s2">1</span><span class="s1">,</span><span class="s2">10000</span><span class="s1">))</span>
+    <span class="s0">while </span><span class="s1">pwlen &gt; </span><span class="s2">0</span><span class="s1">:</span>
+        <span class="s1">a.append(random.randint(</span><span class="s2">1</span><span class="s1">, </span><span class="s2">9</span><span class="s1">))</span>
+        <span class="s1">pwlen -=</span><span class="s2">1</span>
+        <span class="s1">a.append(random.choice(string.ascii_letters))</span>
+        <span class="s1">pwlen -= </span><span class="s2">1</span>
+        <span class="s1">a.append(random.choice(string.punctuation))</span>
+        <span class="s1">pwlen -= </span><span class="s2">1</span>
+    <span class="s3">#convert elements in the list to strings</span>
+    <span class="s1">result = </span><span class="s4">''</span><span class="s1">.join(str(e) </span><span class="s0">for </span><span class="s1">e </span><span class="s0">in </span><span class="s1">a)</span>
+    <span class="s1">print(result)</span>
+    <span class="s0">return</span>
+<span class="s0">while True</span><span class="s1">:</span>
+    <span class="s1">userIn = input(</span><span class="s4">&quot;Generate a random password? Y/N:  &quot;</span><span class="s1">)</span>
+    <span class="s0">if </span><span class="s1">userIn.lower() == </span><span class="s4">&quot;y&quot;</span><span class="s1">:</span>
+        <span class="s1">passgen()</span>
+    <span class="s0">elif </span><span class="s1">userIn.lower() != </span><span class="s4">&quot;n&quot; </span><span class="s0">and </span><span class="s1">userIn.lower != </span><span class="s4">&quot;y&quot;</span><span class="s1">:</span>
+        <span class="s1">print(</span><span class="s4">&quot;Please enter a valid response. </span><span class="s5">\n</span><span class="s4">&quot;</span><span class="s1">)</span>
+    <span class="s0">else</span><span class="s1">:</span>
+        <span class="s0">break</span>
+</pre>
+</body>
+</html>
